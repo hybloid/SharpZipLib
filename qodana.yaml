@@ -1,0 +1,4 @@
+dotnet:
+  solution: ICSharpCode.SharpZipLib.sln
+
+bootstrap: dotnet build; cd test/ICSharpCode.SharpZipLib.Tests && dotnet add package coverlet.msbuild && ((dotnet test /p:CollectCoverage=true /p:CoverletOutput=/data/project/.qodana/code-coverage/ /p:CoverletOutputFormat=lcov) || true)
